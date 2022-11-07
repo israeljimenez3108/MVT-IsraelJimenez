@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from appdesafio.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #Asignamos el path raiz a vista_familiares
+    path('', vista_familiares),
 ]

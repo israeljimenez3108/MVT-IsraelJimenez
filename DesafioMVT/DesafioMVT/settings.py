@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Agregamos la app creada
+    'appdesafio',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,8 @@ ROOT_URLCONF = 'DesafioMVT.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        #Definimos la ruta de los templates 
+        'DIRS': [r"C:/Coder/Python/DesafioMVT/DesafioMVT/DesafioMVT/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

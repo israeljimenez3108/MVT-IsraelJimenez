@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio MVT Familiares</title>
+
+    <!-- Agrego el estilo a la tabla-->
+    <style>
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead tr{
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even){
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type{
+            border-bottom: 2px solid #009879;
+        }
+
+        .styled-table tbody tr.active-row{
+            font-weight: bold;
+            color: #009879;
+        }
+
+        h1 { color: #c9d0d4; font-family: 'Helvetica Neue', sans-serif; font-size: 26px; font-weight: 100; line-height: 50px; letter-spacing: 1px; padding: 0 0 40px; border-bottom: double #555;}
+
+       
+
+    </style>
+    
+
+</head>
+<body>
+
+    <h1>Desafio MVT Familiares<br>Israel Jimenez</h1>
+    
+    <!-- Aqui genero la tabla con los datos de los familiares -->
+    <table class="styled-table">
+
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aqui uso el for para recorrer los datos de la db-->
+            {% for familiar in listado_familiares %}
+            <tr class="active-row">
+                <td>{{familiar.nombre}}</td>
+                <td>{{familiar.fecha_nac}}</td>
+                <td>{{familiar.edad}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    
+</body>
+</html>
